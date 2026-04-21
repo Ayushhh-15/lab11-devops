@@ -1,1 +1,1 @@
-print("Hello DevOps Lab 11")
+print("Updated version")
