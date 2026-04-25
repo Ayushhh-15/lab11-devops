@@ -13,11 +13,5 @@ pipeline {
                 bat 'docker build -t ayushhh-15/lab11-devops .'
             }
         }
-
-        stage('Push Docker Image') {
-            steps {
-                bat 'docker push ayushhh-15/lab11-devops'
-            }
-        }
     }
 }
