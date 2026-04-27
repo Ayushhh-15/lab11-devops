@@ -16,7 +16,13 @@ pipeline {
 
         stage('Docker Login') {
             steps {
-                bat 'docker login -u ayushrwt15 -p dckr_pat_sEoaX-EURzdkOHNbJ1JdO5CWYrs'
+                withCredentials([usernamePassword(
+                    credentialsId: 'dockerhub-creds',
+                    usernameVariable: 'DOCKER_USER',
+                    passwordVariable: 'DOCKER_PASS'
+                )]) {
+                    bat 'docker login -u %DOCKER_USER% -p %DOCKER_PASS%'
+                }
             }
         }
 
